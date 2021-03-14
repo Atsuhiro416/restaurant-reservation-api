@@ -21,3 +21,6 @@ Route::get('/user', 'UserController@get');
 Route::put('/user', 'UserController@put');
 Route::post('/owner', 'OwnersController@post');
 Route::apiResource('/store', 'StoresController');
+Route::post('/like', 'LikesController@store');
+Route::delete('/like', 'LikesController@destroy');
+Route::get('/my-like/{user}', 'LikesController@get_my_likes');

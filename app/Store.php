@@ -10,4 +10,9 @@ class Store extends Model
     {
         return $this->belongsTo('App\Owner');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
 }
