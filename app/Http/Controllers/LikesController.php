@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Like;
 use App\User;
+use App\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -112,5 +113,21 @@ class LikesController extends Controller
             'message' => 'OK',
             'data' => $my_likes,
         ], 200);
+    }
+
+    public function is_like_exist(User $user, Store $store)
+    {
+        $like_exist = User::find($user->id)->likes()->where('store_id', $store->id)->exists();
+        if ($like_exist) {
+            return response()->json([
+                'message' => 'The like exists',
+                'data' => true,
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'The like does not exist',
+                'data' => false,
+            ], 200);
+        }
     }
 }

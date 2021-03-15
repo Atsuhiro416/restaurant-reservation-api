@@ -24,3 +24,4 @@ Route::apiResource('/store', 'StoresController');
 Route::post('/like', 'LikesController@store');
 Route::delete('/like', 'LikesController@destroy');
 Route::get('/my-like/{user}', 'LikesController@get_my_likes');
+Route::get('/like-exist/{user}/{store}', 'LikesController@is_like_exist');
