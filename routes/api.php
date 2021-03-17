@@ -25,3 +25,6 @@ Route::post('/like', 'LikesController@store');
 Route::delete('/like', 'LikesController@destroy');
 Route::get('/my-like/{user}', 'LikesController@get_my_likes');
 Route::get('/like-exist/{user}/{store}', 'LikesController@is_like_exist');
+Route::post('/history', 'HistoryController@store');
+Route::put('/history', 'HistoryController@update');
+Route::get('/my-histories/{user}', 'HistoryController@get_my_histories');

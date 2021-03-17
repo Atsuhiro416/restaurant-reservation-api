@@ -15,4 +15,9 @@ class Store extends Model
     {
         return $this->hasMany('App\Like');
     }
+
+    public function histories()
+    {
+        return $this->hasMany('App\History');
+    }
 }
